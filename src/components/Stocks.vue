@@ -5,10 +5,10 @@
         <div class="card">
           <div class="card-header bg-info text-white">
             Disney
-            <span>(Price: 100)</span>
+            <span>(Price: {{ disneyPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="text" />
+            <input class="p-2" type="number" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -17,10 +17,10 @@
         <div class="card">
           <div class="card-header bg-info text-white">
             Google
-            <span>(Price: 100)</span>
+            <span>(Price: {{ googlePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="text" />
+            <input class="p-2" type="number" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -31,10 +31,10 @@
         <div class="card">
           <div class="card-header bg-info text-white">
             Apple
-            <span>(Price: 100)</span>
+            <span>(Price: {{ applePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="text" />
+            <input class="p-2" type="number" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -43,10 +43,10 @@
         <div class="card">
           <div class="card-header bg-info text-white">
             Coca-Cola
-            <span>(Price: 100)</span>
+            <span>(Price: {{ cocaColaPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="text" />
+            <input class="p-2" type="number" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -56,7 +56,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      disneyPrice: 100,
+      googlePrice: 100,
+      applePrice: 100,
+      cocaColaPrice: 100
+    };
+  }
+};
 </script>
 
 <style>
