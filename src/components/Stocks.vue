@@ -8,7 +8,13 @@
             <span>(Price: {{ disneyPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" min="0" placeholder="Quantity" />
+            <input
+              v-model="disneyStock"
+              class="p-2"
+              type="number"
+              min="0"
+              placeholder="Quantity"
+            />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -20,7 +26,13 @@
             <span>(Price: {{ googlePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" min="0" placeholder="Quantity" />
+            <input
+              v-model="googleStock"
+              class="p-2"
+              type="number"
+              min="0"
+              placeholder="Quantity"
+            />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -34,8 +46,14 @@
             <span>(Price: {{ applePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" min="0" placeholder="Quantity" />
-            <button class="btn btn-success">Buy</button>
+            <input
+              v-model="appleStock"
+              class="p-2"
+              type="number"
+              min="0"
+              placeholder="Quantity"
+            />
+            <button @click="buyApple" class="btn btn-success">Buy</button>
           </div>
         </div>
       </div>
@@ -46,12 +64,19 @@
             <span>(Price: {{ cocaColaPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" min="0" placeholder="Quantity" />
+            <input
+              v-model="cocaColaStock"
+              class="p-2"
+              type="number"
+              min="0"
+              placeholder="Quantity"
+            />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
       </div>
     </div>
+    {{ funds }}
   </div>
 </template>
 
@@ -59,12 +84,22 @@
 export default {
   data() {
     return {
+      disneyStock: "",
+      googleStock: "",
+      appleStock: "",
+      cocaColaStock: "",
       disneyPrice: 100,
       googlePrice: 100,
       applePrice: 100,
       cocaColaPrice: 100
     };
-  }
+  },
+  methods: {
+    buyApple() {
+      funds - this.appleStock * this.applePrice;
+    }
+  },
+  props: ["funds"]
 };
 </script>
 
