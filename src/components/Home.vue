@@ -10,7 +10,11 @@
 
 <script>
 export default {
-  props: ["funds"]
+  computed: {
+    funds() {
+      return this.$store.state.funds;
+    }
+  }
 };
 </script>
 

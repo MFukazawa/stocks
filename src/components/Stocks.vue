@@ -15,7 +15,7 @@
               min="0"
               placeholder="Quantity"
             />
-            <button class="btn btn-success">Buy</button>
+            <button @click="buyDisney" class="btn btn-success">Buy</button>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
               min="0"
               placeholder="Quantity"
             />
-            <button class="btn btn-success">Buy</button>
+            <button @click="buyGoogle" class="btn btn-success">Buy</button>
           </div>
         </div>
       </div>
@@ -71,35 +71,32 @@
               min="0"
               placeholder="Quantity"
             />
-            <button class="btn btn-success">Buy</button>
+            <button @click="buyCocaCola" class="btn btn-success">Buy</button>
           </div>
         </div>
       </div>
     </div>
-    {{ funds }}
+    Funds: {{ funds }} Disney Stock: {{ disneyStock }} Disney Price:
+    {{ disneyPrice }}
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      disneyStock: "",
-      googleStock: "",
-      appleStock: "",
-      cocaColaStock: "",
-      disneyPrice: 100,
-      googlePrice: 100,
-      applePrice: 100,
-      cocaColaPrice: 100
-    };
-  },
-  methods: {
-    buyApple() {
-      funds - this.appleStock * this.applePrice;
+  // methods: {
+  //   buyGoogle() {
+  //     this.store.$state.funds -
+  //       this.store.$state.googleStock * this.store.$state.googlePrice;
+  //   },
+  //   buyApple() {},
+  //   buyDisney() {},
+  //   buyCocaCola() {}
+  // },
+  computed: {
+    disneyPrice() {
+      this.store.$state.disneyPrice;
     }
-  },
-  props: ["funds"]
+  }
 };
 </script>
 
