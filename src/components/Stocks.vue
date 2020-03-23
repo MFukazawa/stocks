@@ -8,7 +8,7 @@
             <span>(Price: {{ disneyPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" />
+            <input class="p-2" type="number" min="0" placeholder="Quantity" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -20,7 +20,7 @@
             <span>(Price: {{ googlePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" />
+            <input class="p-2" type="number" min="0" placeholder="Quantity" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -34,7 +34,7 @@
             <span>(Price: {{ applePrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" />
+            <input class="p-2" type="number" min="0" placeholder="Quantity" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
@@ -46,7 +46,7 @@
             <span>(Price: {{ cocaColaPrice }})</span>
           </div>
           <div class="card-body d-flex justify-content-between">
-            <input class="p-2" type="number" />
+            <input class="p-2" type="number" min="0" placeholder="Quantity" />
             <button class="btn btn-success">Buy</button>
           </div>
         </div>
