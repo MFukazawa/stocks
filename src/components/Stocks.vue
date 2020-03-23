@@ -3,7 +3,7 @@
     <div class="row mb-3">
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-header bg-info">
+          <div class="card-header bg-info text-white">
             Disney
             <span>(Price: 100)</span>
           </div>
@@ -15,7 +15,7 @@
       </div>
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-header bg-info">
+          <div class="card-header bg-info text-white">
             Google
             <span>(Price: 100)</span>
           </div>
@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-header bg-info">
+          <div class="card-header bg-info text-white">
             Apple
             <span>(Price: 100)</span>
           </div>
@@ -41,7 +41,7 @@
       </div>
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-header bg-info">
+          <div class="card-header bg-info text-white">
             Coca-Cola
             <span>(Price: 100)</span>
           </div>
