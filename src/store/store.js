@@ -6,21 +6,25 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     funds: 10000,
+    stockQuantity: "",
     disneyStock: "",
     googleStock: "",
     appleStock: "",
-    cocaColaStock: "",
-    disneyPrice: "100",
-    googlePrice: 100,
-    applePrice: 100,
-    cocaColaPrice: 100
+    cocaColaStock: ""
   },
   getters: {
-    // calcDisneyBuy: state => {
-    //   return state.funds - (disneyStock - disneyPrice);
-    // }
-    disneyPrice: state => {
-      return state.disneyPrice;
+    stockQuantity: state => {
+      return state.stockQuantity;
+    }
+  },
+  mutations: {
+    updateStockQuantity: (state, payload) => {
+      state.stockQuantity = payload;
+    }
+  },
+  actions: {
+    updateStockQuantity({ commit }, payload) {
+      commit("updateStockQuantity", payload);
     }
   }
 });
