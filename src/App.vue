@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <app-header />
-    <div class="container m-4">
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -20,4 +18,7 @@ export default {
 </script>
 
 <style>
+router-view {
+  padding: 30px;
+}
 </style>
