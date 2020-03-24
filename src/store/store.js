@@ -10,14 +10,17 @@ export const store = new Vuex.Store({
     googleStock: "",
     appleStock: "",
     cocaColaStock: "",
-    disneyPrice: 100,
+    disneyPrice: "100",
     googlePrice: 100,
     applePrice: 100,
     cocaColaPrice: 100
   },
   getters: {
-    calcDisneyBuy: state => {
-      return state.funds - (disneyStock - disneyPrice);
+    // calcDisneyBuy: state => {
+    //   return state.funds - (disneyStock - disneyPrice);
+    // }
+    disneyPrice: state => {
+      return state.disneyPrice;
     }
   }
 });

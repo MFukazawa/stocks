@@ -8,7 +8,7 @@
       <div class="card-body d-flex justify-content-between">
         <!-- v-model? -->
         <input class="p-2" type="number" min="0" placeholder="Quantity" />
-        <button @click="buyStock" class="btn btn-success">Buy</button>
+        <button class="btn btn-success">Buy</button>
       </div>
     </div>
   </div>
