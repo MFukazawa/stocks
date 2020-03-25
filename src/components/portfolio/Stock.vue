@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-6 col-md-4 my-3">
     <div class="card">
-      <div class="card-header bg-info text-white">
+      <div class="card-header bg-primary text-white">
         {{ stock.name }}
         <span
           >(Price: {{ stock.price }}) || Quantity: {{ stock.quantity }}</span
@@ -18,7 +18,7 @@
         />
         <button
           @click.prevent="sellStock"
-          class="btn btn-success"
+          class="btn btn-primary"
           :disabled="
             quantity <= 0 || !Number.isInteger(quantity) || insufficientQuantity
           "
@@ -41,9 +41,6 @@ export default {
     };
   },
   computed: {
-    funds() {
-      return this.$store.getters.funds;
-    },
     insufficientQuantity() {
       return this.quantity > this.stock.quantity;
     }

@@ -20,10 +20,10 @@
       </router-link>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <router-link to="" class="nav-link" activeClass="active" tag="li">
-        <a>End Day</a>
-      </router-link>
-      <li class="dropdown nav-link">
+      <li to="" class="nav-link" activeClass="active">
+        <a href="#" @click="endDay">End Day</a>
+      </li>
+      <li class="dropdown open">
         <a
           href="#"
           class="dropdown-toggle"
@@ -38,17 +38,25 @@
         </ul>
       </li>
       <router-link to="" class="nav-link" activeClass="active" tag="li">
-        <a>Funds: ${{ funds }}</a>
+        <a>Funds: ${{ funds | formatFunds }}</a>
       </router-link>
     </ul>
   </nav>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   computed: {
     funds() {
       return this.$store.getters.funds;
+    }
+  },
+  methods: {
+    ...mapActions(["randomizeStocks"]),
+    endDay() {
+      this.randomizeStocks();
     }
   }
 };

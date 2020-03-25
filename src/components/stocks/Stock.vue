@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-6 col-md-4 my-3">
     <div class="card">
-      <div class="card-header bg-info text-white">
+      <div class="card-header bg-success text-white">
         {{ stock.name }}
         <span>(Price: {{ stock.price }})</span>
       </div>

@@ -11,6 +11,10 @@ const router = new VueRouter({
   mode: "history"
 });
 
+Vue.filter("formatFunds", function(number) {
+  return new Intl.NumberFormat().format(number);
+});
+
 new Vue({
   el: "#app",
   router,
