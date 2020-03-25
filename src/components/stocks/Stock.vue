@@ -11,6 +11,7 @@
           v-model.number="quantity"
           class="p-2 form-control"
           type="number"
+          min="0"
           placeholder="Quantity"
         />
         <button
@@ -41,7 +42,7 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      console.log(order);
+      this.$store.dispatch("buyStock", order);
       this.quantity = 0;
     }
   }
