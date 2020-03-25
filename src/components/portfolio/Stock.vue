@@ -24,7 +24,6 @@
         </button>
       </div>
     </div>
-    {{ quantity }}
   </div>
 </template>
 
