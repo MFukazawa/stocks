@@ -14,13 +14,16 @@
           class="p-2 form-control"
           type="number"
           placeholder="Quantity"
+          :class="{ danger: insufficientQuantity }"
         />
         <button
           @click.prevent="sellStock"
           class="btn btn-success"
-          :disabled="quantity <= 0 || !Number.isInteger(quantity)"
+          :disabled="
+            quantity <= 0 || !Number.isInteger(quantity) || insufficientQuantity
+          "
         >
-          Sell
+          {{ insufficientQuantity ? "🚫" : "Sell" }}
         </button>
       </div>
     </div>
@@ -36,6 +39,14 @@ export default {
     return {
       quantity: 0
     };
+  },
+  computed: {
+    funds() {
+      return this.$store.getters.funds;
+    },
+    insufficientQuantity() {
+      return this.quantity > this.stock.quantity;
+    }
   },
   methods: {
     ...mapActions({
@@ -55,5 +66,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.danger {
+  border: 1px solid red;
+}
 </style>

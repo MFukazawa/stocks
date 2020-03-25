@@ -7,19 +7,16 @@ const mutations = {
   // Destructured from Stock.vue const order
   BUY_STOCK(state, { stockId, quantity, stockPrice }) {
     const record = state.stocks.find(element => element.id == stockId);
-    if (stockPrice * quantity <= state.funds) {
-      if (record) {
-        record.quantity += quantity;
-      } else {
-        state.stocks.push({
-          id: stockId,
-          quantity: quantity
-        });
-      }
-      state.funds -= stockPrice * quantity;
+
+    if (record) {
+      record.quantity += quantity;
     } else {
-      alert("You don't have enough funds to do that!");
+      state.stocks.push({
+        id: stockId,
+        quantity: quantity
+      });
     }
+    state.funds -= stockPrice * quantity;
   },
   SELL_STOCK(state, { stockId, quantity, stockPrice }) {
     const record = state.stocks.find(element => element.id == stockId);
@@ -27,17 +24,13 @@ const mutations = {
     console.log(record.quantity);
     console.log(quantity);
 
-    if (quantity < record.quantity) {
-      if (record.quantity > quantity) {
-        record.quantity -= quantity;
-      } else {
-        state.stocks.splice(state.stocks.indexOf(record), 1);
-      }
-
-      state.funds += stockPrice * quantity;
+    if (record.quantity > quantity) {
+      record.quantity -= quantity;
     } else {
-      alert("You don't have that many stocks to sell!");
+      state.stocks.splice(state.stocks.indexOf(record), 1);
     }
+
+    state.funds += stockPrice * quantity;
   }
 };
 
