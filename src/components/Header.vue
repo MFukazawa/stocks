@@ -40,8 +40,12 @@
           :class="{ show: isDropdownOpen }"
           @click="isDropdownOpen = !isDropdownOpen"
         >
-          <li class="dropdown-item"><a href="#">Save Data</a></li>
-          <li class="dropdown-item"><a href="#">Load Data</a></li>
+          <li class="dropdown-item">
+            <a href="#" @click="saveData">Save Data</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" @click="loadData">Load Data</a>
+          </li>
         </ul>
       </li>
       <li class="nav-link text-success" :class="{ 'text-danger': lowMoney }">
@@ -69,9 +73,23 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["randomizeStocks"]),
+    ...mapActions({
+      randomizeStocks: "randomizeStocks",
+      fetchData: "loadData"
+    }),
     endDay() {
       this.randomizeStocks();
+    },
+    saveData() {
+      const data = {
+        funds: this.$store.getters.funds,
+        stockPortfolio: this.$store.getters.stockPortfolio,
+        stocks: this.$store.getters.stocks
+      };
+      this.$http.put("data.json", data);
+    },
+    loadData() {
+      this.fetchData();
     }
   }
 };
