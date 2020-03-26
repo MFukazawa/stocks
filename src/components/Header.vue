@@ -44,9 +44,9 @@
           <li class="dropdown-item"><a href="#">Load Data</a></li>
         </ul>
       </li>
-      <router-link to="" class="nav-link" activeClass="active" tag="li">
+      <li class="nav-link text-success" :class="{ 'text-danger': lowMoney }">
         <a>Funds: ${{ funds | formatFunds }}</a>
-      </router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -63,6 +63,9 @@ export default {
   computed: {
     funds() {
       return this.$store.getters.funds;
+    },
+    lowMoney() {
+      return this.$store.getters.funds <= 100;
     }
   },
   methods: {
@@ -74,5 +77,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.text-danger {
+  color: red;
+}
 </style>
